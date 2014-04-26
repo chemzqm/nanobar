@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nanobar</title>
+  <link rel="stylesheet" href="build/build.css">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1,width=device-width, height=device-height"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <script src="build/build.js"></script>
+  <style>
+    .container {
+      text-align: center;
+      margin: 0 auto;
+      padding: 60px 0;
+      max-width: 860px;
+    }
+    .brand {
+      font-family: Georgia, serif;
+      font-size: large;
+      margin-bottom: 100px;
+    }
+    .footer {
+      margin-top: 100px;
+    }
+    .footer a {
+      color: #999;
+      font-size: 20px;
+      border: 3px solid #ccc;
+      padding: 10px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      border-color: #999;
+    }
+    button {
+      border: 2px solid #333;
+      background: #333;
+      padding: 10px 30px;
+      color: white;
+      font-size: 14px;
+      border-radius: 6px;
+      outline: none;
+      margin: 10px;
+    }
+    button:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="brand">
+      <h1>Nanobar</h1>
+      <p>A progress bar at the very top of a webpage.</p>
+    </div>
+    <div class="buttons">
+      <button data-percent="0.30">nanobar.update(0.3)</button>
+      <button data-percent="0.60">nanobar.update(0.6)</button>
+      <button data-percent="1">nanobar.update(1)</button>
+      <button>nanobar.infinite()</button>
+    </div>
+    <div class="footer">
+      <p><a href="https://github.com/chemzqm/nanobar">View Documentation</a></p>
+    </div>
+  </div>
+  <script>
+    var Nanobar = require('nanobar');
+    var nanobar = new Nanobar();
+    nanobar.update(0.1);
+    (function() {
+      var buttons = document.getElementsByTagName('button');
+      for (var i = 0; i < buttons.length; i++) {
+        (function(button) {
+          button.onclick = function() {
+            var percent = button.getAttribute('data-percent');
+            if (percent) {
+              nanobar.update(percent);
+            } else {
+              nanobar.infinite();
+            }
+          };
+        })(buttons[i]);
+      }
+    })();
+  </script>
+</body>
+</html>
