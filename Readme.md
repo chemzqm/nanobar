@@ -15,13 +15,16 @@ Install with [component(1)](http://component.io):
 ```
 var Nanobar = require('nanobar');
 ```
+### new Nanobar(parent);
 
-### Nanobar#go(number)
+append nanobar to parentNode;
+
+### Nanobar#update(number)
 
 Goto a certain percent of progress.
 
 ```
-nanobar.go(30)
+nanobar.update(30)
 ```
 
 ### Nanobar#dismiss()

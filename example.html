@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>Nanobar</title>
   <link rel="stylesheet" href="build/build.css">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1,width=device-width, height=device-height"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <script src="build/build.js"></script>
   <style>
     .container {
@@ -54,19 +57,19 @@
       <p>A progress bar at the very top of a webpage.</p>
     </div>
     <div class="buttons">
-      <button data-percent="30">nanobar.go(30)</button>
-      <button data-percent="60">nanobar.go(60)</button>
-      <button data-percent="100">nanobar.go(100)</button>
+      <button data-percent="0.30">nanobar.update(0.3)</button>
+      <button data-percent="0.60">nanobar.update(0.6)</button>
+      <button data-percent="1">nanobar.update(1)</button>
       <button>nanobar.infinite()</button>
     </div>
     <div class="footer">
-      <p><a href="https://github.com/yuehu/nanobar">View Documentation</a></p>
+      <p><a href="https://github.com/chemzqm/nanobar">View Documentation</a></p>
     </div>
   </div>
   <script>
     var Nanobar = require('nanobar');
     var nanobar = new Nanobar();
-    nanobar.go(10);
+    nanobar.update(0.1);
     (function() {
       var buttons = document.getElementsByTagName('button');
       for (var i = 0; i < buttons.length; i++) {
@@ -74,7 +77,7 @@
           button.onclick = function() {
             var percent = button.getAttribute('data-percent');
             if (percent) {
-              nanobar.go(percent);
+              nanobar.update(percent);
             } else {
               nanobar.infinite();
             }
