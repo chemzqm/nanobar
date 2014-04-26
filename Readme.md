@@ -2,13 +2,13 @@
 
 A progress bar at the very top of a webpage.
 
-VIEW DEMO: <http://yuehu.github.io/nanobar/>
+VIEW DEMO: <http://chemzqm.github.io/nanobar/>
 
 ## Installation
 
 Install with [component(1)](http://component.io):
 
-    $ component install yuehu/nanobar
+    $ component install chemzqm/nanobar
 
 ## API
 
