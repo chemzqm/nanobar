@@ -60,6 +60,7 @@ require.register("nanobar", function (exports, module) {
  */
 
 function Nanobar(parent) {
+  if(! (this instanceof Nanobar)) return new Nanobar(parent);
   parent = parent || document.body;
   var el = document.createElement('div');
   el.className = 'nanobar';
