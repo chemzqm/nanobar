@@ -15,9 +15,9 @@ Install with [component(1)](http://component.io):
 ```
 var Nanobar = require('nanobar');
 ```
-### new Nanobar(parent);
+### new Nanobar([parent]);
 
-append nanobar to parentNode;
+append nanobar to parentNode (default to document.body);
 
 ### Nanobar#update(number)
 
