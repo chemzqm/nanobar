@@ -19,6 +19,7 @@ function Nanobar(parent) {
 
 Nanobar.prototype.update = function(n) {
   var bar = this.bar;
+  n = Math.min(n, 1);
   bar.className = 'nanobar-progress';
   bar.style.width = (n * 100) + '%';
 
