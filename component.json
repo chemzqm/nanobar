@@ -2,7 +2,7 @@
   "name": "nanobar",
   "repository": "chemzqm/nanobar",
   "description": "A progress bar at the very top of a webpage.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": [],
   "dependencies": {},
   "development": {},
